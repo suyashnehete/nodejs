@@ -65,9 +65,9 @@ res.render("student/addOrEdit",{
 });
 });
 
-route.get('/delete/:id',(req,res)=>Employee.findOneAndRemove({_id :mongoose.mongo.ObjectID(req.params.id)},(err,docs)=>{
+route.get('/delete/:id',(req,res)=>Student.findOneAndRemove({_id :mongoose.mongo.ObjectID(req.params.id)},(err,docs)=>{
 if(!err){
-res.render("/student/list",{
+res.render("student/list",{
 	viewTitle:"Update Student Data",
 	student:docs
 });
