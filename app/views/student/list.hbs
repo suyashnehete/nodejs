@@ -1,0 +1,30 @@
+    <div class="container"> 
+        <h2>Students List</h2>          
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>FullName</th>
+                <th>Enrollment</th>
+                <th>Mobile</th>
+                <th>Email</th> 
+                <th>Update</th> 
+                <th>Delete</th> 
+
+            </tr>
+            </thead>
+            <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.fullName}}</td>
+                <td>{{this.enroll}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.email}}</td>
+                <td><a href="/student/{{this._id}}"><button class="btn btn-info">Update</button></a></td>
+                <td><a href="/student/delete/{{this._id}}"><button class="btn btn-info">Delete</button></a></td>
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <a href="/student"><button class="btn btn-primary" > Add New Student</button></a>
+    </div>
+    

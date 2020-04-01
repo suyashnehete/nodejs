@@ -1,0 +1,28 @@
+        <h3>{{viewTitle}}</h3>
+        <form action="/student" method="POST">
+            <input type="hidden" name="_id" value={{employee._id}}>
+            <div class=form-group>
+                <label>Full Name</label>
+                <input type="text" class="form-control" name="fullName" placeholder="Name" value={{student.fullName}}>
+            </div>
+
+            <div class=form-group>
+                <label>Enrollment No.</label>
+                <input type="text" class="form-control" name="enroll"  placeholder="Enrollment" value={{student.enroll}}>
+            </div>
+
+            <div class=form-group>
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" placeholder="Email" value={{student.email}}>
+            </div>
+
+            <div class=form-group>
+                <label>Mobile</label>
+                <input type="text" class="form-control" name="mobile" placeholder="Mobile" value={{student.mobile}}>
+            </div>
+
+            <div class=form-group>
+                <input type="submit" class="btn btn-info">
+            </div>
+        </form>
+        <a clas="btn btn-primary" href="/student/list"><button class="btn btn-info">View Students</button></a>
