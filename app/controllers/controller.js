@@ -59,18 +59,21 @@ route.get('/:id',(req,res)=>{
 if(!err){
 res.render("student/addOrEdit",{
 	viewTitle:"Update Student Data",
-	employee:docs
+	student:docs
 });
 }
 });
 });
 
-route.get('/delete/:id',(req,res)=>Student.findOneAndRemove({_id :mongoose.mongo.ObjectID(req.params.id)},(err,docs)=>{
+route.get('/delete/:id',(req,res)=>Student.findOneAndDelete({_id :mongoose.mongo.ObjectID(req.params.id)},(err,docs)=>{
 if(!err){
-res.render("student/list",{
-	viewTitle:"Update Student Data",
-	student:docs
-});
+	Student.find((err,docs)=>{
+		if(!err){
+		res.render("student/list",{
+			list:docs
+		});
+		}
+		});
 }
 else{}
 })
